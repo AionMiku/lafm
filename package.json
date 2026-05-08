@@ -1,0 +1,27 @@
+{
+  "name": "lafm_appv1",
+  "version": "1.0.0",
+  "description": "A new Flutter project.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AionMiku/lafm_v1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AionMiku/lafm_v1/issues"
+  },
+  "homepage": "https://github.com/AionMiku/lafm_v1#readme",
+  "dependencies": {
+    "sqlite3": "^6.0.1"
+  }
+}

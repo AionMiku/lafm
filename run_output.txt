@@ -1,0 +1,91 @@
+Launching lib\main.dart on moto g32 in debug mode...
+Running Gradle task 'assembleDebug'...                          
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+3 warnings
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+Running Gradle task 'assembleDebug'...                            321.7s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...           6.6s
+D/FlutterJNI(26456): Beginning load of flutter...
+D/FlutterJNI(26456): flutter (null) was loaded normally!
+I/flutter (26456): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+I/flutter (26456): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+D/FlutterGeolocator(26456): Attaching Geolocator to activity
+Syncing files to device moto g32...                              1,370ms
+
+Flutter run key commands.
+r Hot reload. 
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on moto g32 is available at: http://127.0.0.1:62882/v-9zCJGS4wo=/
+The Flutter DevTools debugger and profiler on moto g32 is available at: http://127.0.0.1:62882/v-9zCJGS4wo=/devtools/?uri=ws://127.0.0.1:62882/v-9zCJGS4wo=/ws
+I/Choreographer(26456): Skipped 395 frames!  The application may be doing too much work on its main thread.
+I/xample.lafm_app(26456): Compiler allocated 4312KB to compile void android.view.ViewRootImpl.performTraversals()
+I/AdrenoGLES-0(26456): QUALCOMM build                   : 43fc279f3a, I58833f8ed4
+I/AdrenoGLES-0(26456): Build Date                       : 03/24/23
+I/AdrenoGLES-0(26456): OpenGL ES Shader Compiler Version: EV031.32.02.17
+I/AdrenoGLES-0(26456): Local Branch                     : 
+I/AdrenoGLES-0(26456): Remote Branch                    : 
+I/AdrenoGLES-0(26456): Remote Branch                    : 
+I/AdrenoGLES-0(26456): Reconstruct Branch               : 
+I/AdrenoGLES-0(26456): Build Config                     : S P 10.0.7 AArch64
+I/AdrenoGLES-0(26456): Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+I/AdrenoGLES-0(26456): PFP: 0x016ee197, ME: 0x00000000
+E/qdgralloc(26456): GetGpuPixelFormat: No map for format: 0x38
+E/AdrenoUtils(26456): <validate_memory_layout_input_parmas:1984>: Unknown Format 0
+E/AdrenoUtils(26456): <adreno_init_memory_layout:4723>: Memory Layout input parameter validation failed!
+E/qdgralloc(26456): GetGpuResourceSizeAndDimensions Graphics metadata init failed
+E/Gralloc4(26456): isSupported(1, 1, 56, 1, ...) failed with 1
+E/GraphicBufferAllocator(26456): Failed to allocate (4 x 4) layerCount 1 format 56 usage b00: 1
+E/AHardwareBuffer(26456): GraphicBuffer(w=4, h=4, lc=1) failed (Unknown error -1), handle=0x0
+E/qdgralloc(26456): GetGpuPixelFormat: No map for format: 0x38
+E/AdrenoUtils(26456): <validate_memory_layout_input_parmas:1984>: Unknown Format 0
+E/AdrenoUtils(26456): <adreno_init_memory_layout:4723>: Memory Layout input parameter validation failed!
+E/qdgralloc(26456): GetGpuResourceSizeAndDimensions Graphics metadata init failed
+E/Gralloc4(26456): isSupported(1, 1, 56, 1, ...) failed with 1
+I/OpenGLRenderer(26456): setGrContext nullptr-->validptr
+E/GraphicBufferAllocator(26456): Failed to allocate (4 x 4) layerCount 1 format 56 usage b00: 1
+E/AHardwareBuffer(26456): GraphicBuffer(w=4, h=4, lc=1) failed (Unknown error -1), handle=0x0
+D/Surface (26456): Surface::disconnect
+D/BufferQueueProducer(26456): [SurfaceView[com.example.lafm_app/com.example.lafm_app.MainActivity]#1(BLAST Consumer)1](id:675800000001,api:1,p:26456,c:26456) disconnect: api 1
+E/OpenGLRenderer(26456): Unable to match the desired swap behavior.
+D/FlutterGeolocator(26456): Creating service.
+D/FlutterGeolocator(26456): Binding to location service.
+W/OnBackInvokedCallback(26456): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback(26456): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/Choreographer(26456): Skipped 77 frames!  The application may be doing too much work on its main thread.
+W/Parcel  (26456): Expecting binder but got null!
+I/OpenGLRenderer(26456): Davey! duration=1332ms; Flags=1, FrameTimelineVsyncId=284138861, IntendedVsync=860253218521365, Vsync=860254504940961, InputEventId=0, HandleInputStart=860254515371721, AnimationStart=860254515375523, PerformTraversalsStart=860254515377502, DrawStart=860254522345211, FrameDeadline=860253235188031, FrameInterval=860254515268909, FrameStartTime=16706748, SyncQueued=860254523340836, SyncStart=860254523846878, IssueDrawCommandsStart=860254524247659, SwapBuffers=860254548211776, FrameCompleted=860254551071152, DequeueBufferDuration=5835938, QueueBufferDuration=823334, GpuCompleted=860254551071152, SwapBuffersCompleted=860254549922818, DisplayPresentTime=0, CommandSubmissionCompleted=860254548211776, 
+D/FlutterGeolocator(26456): Geolocator foreground service connected
+D/FlutterGeolocator(26456): Initializing Geolocator services
+D/FlutterGeolocator(26456): Flutter engine connected. Connected engine count 1
+D/FlutterGeolocator(26456): Geolocator foreground service connected
+D/FlutterGeolocator(26456): Initializing Geolocator services
+D/FlutterGeolocator(26456): Flutter engine connected. Connected engine count 2
+D/ProfileInstaller(26456): Installing profile for com.example.lafm_app
+Lost connection to device.
