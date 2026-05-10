@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../../core/settings/theme_controller.dart';
 import '../../home/screens/prayer_notifications_screen.dart';
+import '../../auth/screens/auth_screen.dart';
+import '../../auth/services/auth_service.dart';
 import 'customize_widgets_screen.dart';
 import 'theme_settings_screen.dart';
 
@@ -17,45 +20,87 @@ class ProfileScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // User Info Section
-          const Center(
-            child: Column(
-              children: [
-                CircleAvatar(
-                  radius: 50,
-                  child: Icon(Icons.person, size: 50),
-                ),
-                SizedBox(height: 16),
-                Text(
-                  'Guest User',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  'Sign in to sync your data across devices',
-                  style: TextStyle(color: Colors.white70),
-                ),
-                SizedBox(height: 16),
-              ],
-            ),
-          ),
-          
-          ElevatedButton(
-            onPressed: () {
-              // TODO: Implement Login Logic
+          // Dynamic User Info Section
+          StreamBuilder<User?>(
+            stream: FirebaseAuth.instance.authStateChanges(),
+            builder: (context, snapshot) {
+              final user = snapshot.data;
+              
+              if (user != null) {
+                // LOGGED IN STATE
+                return Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundImage: user.photoURL != null ? NetworkImage(user.photoURL!) : null,
+                      child: user.photoURL == null ? const Icon(Icons.person, size: 50) : null,
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      user.displayName ?? 'Muslim User',
+                      style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      user.email ?? '',
+                      style: const TextStyle(color: Colors.white70),
+                    ),
+                    const SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed: () => AuthService().signOut(),
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+                        backgroundColor: Colors.redAccent.withValues(alpha: 0.2),
+                        foregroundColor: Colors.redAccent,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          side: BorderSide(color: Colors.redAccent.withValues(alpha: 0.3), width: 1.0),
+                        ),
+                      ),
+                      child: const Text('Log Out'),
+                    ),
+                  ],
+                );
+              } else {
+                // GUEST STATE
+                return Column(
+                  children: [
+                    const CircleAvatar(
+                      radius: 50,
+                      child: Icon(Icons.person, size: 50),
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      'Guest User',
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                    const Text(
+                      'Sign in to sync your data across devices',
+                      style: TextStyle(color: Colors.white70),
+                    ),
+                    const SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (_) => const AuthScreen()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        backgroundColor: Theme.of(context).cardColor,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          side: BorderSide(color: Colors.white.withValues(alpha: 0.12), width: 1.0),
+                        ),
+                      ),
+                      child: const Center(child: Text('Login / Sign Up')),
+                    ),
+                  ],
+                );
+              }
             },
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              backgroundColor: Theme.of(context).cardColor,
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-                side: BorderSide(color: Colors.white.withOpacity(0.12), width: 1.0),
-              ),
-            ),
-            child: const Text('Login / Sign Up'),
           ),
 
           const SizedBox(height: 32),
